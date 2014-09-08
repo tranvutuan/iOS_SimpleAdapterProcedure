@@ -5,9 +5,8 @@
 //  Created by VUTUAN TRAN on 2014-09-01.
 //  Copyright (c) 2014 TONY TRAN. All rights reserved.
 //
-
+#import "TNAConnectionListener.h"
 #import "ViewController.h"
-#import "WLProcedureInvocationData.h"
 @interface ViewController ()
 
 @end
@@ -19,7 +18,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
+    //self.navigationController.navigationBarHidden = YES;
+    self.title = @"Location Info";
 	// Do any additional setup after loading the view, typically from a nib.
 
 }
@@ -38,11 +38,11 @@
     
     WLProcedureInvocationData *myInvocationData = [[WLProcedureInvocationData alloc] initWithAdapterName:@"RestAdapter" procedureName:@"getLocation"];
     [myInvocationData setParameters:[NSArray arrayWithObject:self.locationField.text.length > 0 ? self.locationField.text : @"Toronto"]];
-    [[WLClient sharedInstance] invokeProcedure:myInvocationData withDelegate:self];
+    [[WLClient sharedInstance] invokeProcedure:myInvocationData withDelegate:[[TNAConnectionListener alloc] initWithViewController:self]];
 }
 
-#pragma mark - WLDelegate
--(void)onSuccess:(WLResponse *)response {
+#pragma mark - Display map
+-(void)displayMap:(WLResponse*)response {
     dispatch_queue_t bgQueue = dispatch_queue_create("Background Queue",NULL);
     [self.mapView removeAnnotation:[self.mapView.annotations lastObject]];
     
@@ -65,15 +65,17 @@
             [self.mapView setRegion:region animated:YES];
             [self.mapView selectAnnotation:[[self.mapView annotations] lastObject] animated:YES];
             [self.indicator stopAnimating];
-
+            
         });
     });
 }
 
--(void)onFailure:(WLFailResponse *)response {
+#pragma mark - Connection error
+-(void)showError:(WLFailResponse *)response {
     [self.indicator stopAnimating];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message" message:@"Can't connect to server" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     [alertView show];
 }
+
 
 @end
