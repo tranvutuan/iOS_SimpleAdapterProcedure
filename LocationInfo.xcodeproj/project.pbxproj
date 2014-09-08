@@ -37,7 +37,7 @@
 		9143AA8319B652050044A796 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9143AA8219B652050044A796 /* ViewController.xib */; };
 		9143AA8719B652530044A796 /* worklight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9143AA8619B652530044A796 /* worklight.plist */; };
 		9143AA8919B6525B0044A796 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9143AA8819B6525B0044A796 /* main.m */; };
-		9143AA9319B6544E0044A796 /* LocationInfo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9143AA9219B6544E0044A796 /* LocationInfo-Info.plist */; };
+		91C6E33219BE014000BCE8E8 /* TNAConnectionListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C6E33119BE014000BCE8E8 /* TNAConnectionListener.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +166,8 @@
 		9143AA8819B6525B0044A796 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LocationInfo/main.m; sourceTree = SOURCE_ROOT; };
 		9143AA8B19B652640044A796 /* LocationInfo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LocationInfo-Prefix.pch"; path = "LocationInfo/LocationInfo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		9143AA9219B6544E0044A796 /* LocationInfo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LocationInfo-Info.plist"; path = "LocationInfo/LocationInfo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		91C6E33019BE014000BCE8E8 /* TNAConnectionListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNAConnectionListener.h; path = LocationInfo/TNAConnectionListener.h; sourceTree = SOURCE_ROOT; };
+		91C6E33119BE014000BCE8E8 /* TNAConnectionListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNAConnectionListener.m; path = LocationInfo/TNAConnectionListener.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +411,8 @@
 		9143AA3319B62B4F0044A796 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				91C6E33019BE014000BCE8E8 /* TNAConnectionListener.h */,
+				91C6E33119BE014000BCE8E8 /* TNAConnectionListener.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -509,7 +513,6 @@
 				0B332E9519B5648A0047E14A /* Cookies.mom in Resources */,
 				0B332E9619B5648A0047E14A /* PleaseWaitViewController~iPad.xib in Resources */,
 				9143AA8319B652050044A796 /* ViewController.xib in Resources */,
-				9143AA9319B6544E0044A796 /* LocationInfo-Info.plist in Resources */,
 				0B332E9819B5648A0047E14A /* SplashImageViewController-Landscape.xib in Resources */,
 				9143AA8719B652530044A796 /* worklight.plist in Resources */,
 				0B332E9719B5648A0047E14A /* PleaseWaitViewController~iPhone.xib in Resources */,
@@ -536,6 +539,7 @@
 				9143AA7E19B651E80044A796 /* AppDelegate.m in Sources */,
 				9143AA8119B651F50044A796 /* ViewController.m in Sources */,
 				9143AA8919B6525B0044A796 /* main.m in Sources */,
+				91C6E33219BE014000BCE8E8 /* TNAConnectionListener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
